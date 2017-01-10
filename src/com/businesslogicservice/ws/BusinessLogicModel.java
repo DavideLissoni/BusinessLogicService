@@ -11,32 +11,22 @@ import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 import javax.jws.soap.SOAPBinding.Use;
 
-import com.storageservice.model.Person;
-import com.storageservice.model.Bmi;
+import com.storageservice.ws.Person;
+
+
 //service definition
 @WebService
 @SOAPBinding(style = Style.DOCUMENT, use=Use.LITERAL) 
 public interface BusinessLogicModel {
-    @WebMethod(operationName="getbmi")
-    @WebResult(name="bmi") 
-    public Bmi getBmi(@WebParam(name="personId") long id);
+    @WebMethod(operationName="registration")
+    @WebResult(name="registration") 
+    public int registration(@WebParam(name="person") Person p);
  
-    @WebMethod(operationName="getPersonInformation")
-    @WebResult(name="bmi") 
-    public Person getPersonInformation(@WebParam(name="personId") long id);
-    
-    @WebMethod(operationName="readPerson")
-    @WebResult(name="person") 
-    public Person readPerson(@WebParam(name="personId") long id);
+    @WebMethod(operationName="login")
+    @WebResult(name="login") 
+    public int login(@WebParam(name="id") int id);
  
-    @WebMethod(operationName="readPersonList")
-    @WebResult(name="people") 
-    public List<Person> readPersonList();
 
-    @WebMethod(operationName="getWeatherByLatLng")
-    @WebResult(name="weather") 
-    public String getWeatherByLatLng(@WebParam(name="lat") String lat,@WebParam(name="lng") String lng);
-
-
+//suggerimento goal in base al bmi 
 
 }

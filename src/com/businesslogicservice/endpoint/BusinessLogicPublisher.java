@@ -4,7 +4,8 @@ import java.net.InetAddress;
 import java.net.URISyntaxException;
 import javax.xml.ws.Endpoint;
 
-import com.storageservice.ws.ExternalApiImpl;
+import com.businesslogicservice.ws.BusinessLogicImpl;
+
 
 public class BusinessLogicPublisher {
 	  public static void main(String[] args) throws IllegalArgumentException, IOException, URISyntaxException{
